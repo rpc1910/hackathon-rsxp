@@ -6,9 +6,7 @@ const DislikeController = require("./controllers/DislikeController");
 
 const routes = express.Router();
 
-routes.get("/", (req, res) => {
-  res.send("on");
-});
+//routes.get("/", (req, res) => {res.send("on")});
 
 routes.get("/courses", CourseController.index);
 routes.post("/courses", CourseController.store);

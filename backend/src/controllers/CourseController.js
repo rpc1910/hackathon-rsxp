@@ -1,26 +1,45 @@
-
 const Course = require("../models/Course");
 
 module.exports = {
   async index(req, res) {
-    const courses = await Course.findOne({id:1});
+    const { area } = req.query;
 
-    return res.json(courses);
+    let courses = [];
+
+    if (area) {
+      courses = await Course.find({ area: area });
+    } else {
+      courses = await Course.find();
+    }
+
+    return res.status(200).json(courses);
   },
 
   async store(req, res) {
-    const { courseName } = req.body;
+    const { name, area } = req.body;
 
-    const courseExists = await Course.findOne({ name: courseName });
-
-    if (courseExists) {
-      return res.json(courseExists);
+    if (!name) {
+      return res.status(400).json({ error: "name is necessary" });
+    }
+    if (!area) {
+      return res.status(400).json({ error: "area is necessary" });
     }
 
-    const course = await Course.create({
-      name: courseName
-    });
+    const courseExists = await Course.findOne({ name });
 
-    return res.json(course);
+    if (courseExists) {
+      return res.status(400).json({ error: "course already exists" });
+    }
+
+    try {
+      const course = await Course.create({
+        name,
+        area
+      });
+
+      return res.status(200).json(course);
+    } catch (err) {
+      res.status(500).json({ error: err });
+    }
   }
 };

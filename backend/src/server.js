@@ -14,10 +14,13 @@ mongoose.connect(
   }
 );
 
+mongoose.connection.on('connected', function(){ console.log('db on') });
+mongoose.connection.on('error', function(){ console.log('db error') });
+mongoose.connection.on('disconnected', function(){ console.log('db off') });
 
 app.use(cors());
 app.use(express.json());
 app.use(routes);
 
 app.listen(3000);
-console.log("on");
+console.log("server on");

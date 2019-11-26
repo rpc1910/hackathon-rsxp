@@ -9,7 +9,7 @@ const StudentSchema = new Schema({
     type: String,
     required: true
   },
-  class: {
+  className: {
     type: String,
     required: true
   },
@@ -26,3 +26,5 @@ const StudentSchema = new Schema({
     }
   ]
 });
+
+module.exports = model("Student", StudentSchema);

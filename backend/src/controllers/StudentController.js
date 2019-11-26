@@ -1,31 +1,46 @@
-const axios = require("axios");
 const Student = require("../models/Student");
-const Course = require("../models/Course");
 
 module.exports = {
   async index(req, res) {
     const { student } = req.headers;
 
-    const loggedStudent = await Student.findById(student);
-
-    return res.json(loggedStudent);
+    if (student) {
+      const loggedStudent = await Student.findById(student);
+      return res.status(200).json(loggedStudent);
+    } else {
+      const students = await Student.find();
+      return res.status(200).json(students);
+    }
   },
 
   async store(req, res) {
-    const { schoolName, studentName, className } = req.body;
+    const { name, school, className } = req.body;
 
-    const studentExists = await Student.findOne({ name: studentName });
-
-    if (studentExists) {
-      return res.json(studentExists);
+    if (!name) {
+      return res.status(400).json({ error: "name is necessary" });
+    }
+    if (!school) {
+      return res.status(400).json({ error: "school is necessary" });
+    }
+    if (!className) {
+      return res.status(400).json({ error: "className is necessary" });
     }
 
-    const student = await Student.create({
-      name: studentName,
-      school: schoolName,
-      class: className
-    });
+    const studentExists = await Student.findOne({ name });
 
-    return res.json(student);
+    if (studentExists) {
+      return res.status(400).json({ error: "student already exists" });
+    }
+
+    try {
+      const student = await Student.create({
+        name,
+        school,
+        className
+      });
+      return res.status(200).json(student);
+    } catch (err) {
+      return res.status(500).json({ error: err });
+    }
   }
 };

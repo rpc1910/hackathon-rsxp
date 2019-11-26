@@ -1,0 +1,12 @@
+Exatas
+    "name": "Matemática", "area": "Exatas",
+    "name": "Física", "area": "Exatas",
+    "name": "Química", "area": "Exatas",
+Humanas
+    "name": "História", "area": "Humanas",
+    "name": "Geografia", "area": "Humanas",
+    "name": "Filosofia", "area": "Humanas",
+    "name": "Língua Portuguesa e Literatura", "area": "Humanas",
+    "name": "Língua Estrangeira", "area": "Humanas",
+Biológicas
+    "name": "Biologia", "area": "Biológicas"

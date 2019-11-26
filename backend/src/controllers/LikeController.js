@@ -3,13 +3,19 @@ const Course = require("../models/Course");
 
 module.exports = {
   async store(req, res) {
-    console.log(req.io, req.connectedUsers);
-
     const { student } = req.headers;
     const { courseId } = req.params;
 
+    if (!courseId) {
+      return res.status(400).json({ error: "courseId is necessary" });
+    }
+
     const loggedStudent = await Student.findById(student);
     let targetCourse = null;
+
+    if (!loggedStudent) {
+      return res.status(400).json({ error: "user not found" });
+    }
 
     try {
       targetCourse = await Course.findById(courseId);
