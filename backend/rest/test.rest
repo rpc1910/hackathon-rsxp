@@ -1,0 +1,14 @@
+GET http://localhost:3000
+
+###
+
+GET http://localhost:3000/courses
+
+###
+
+POST http://localhost:3000/courses
+Content-Type: application/json
+
+{
+    "name": "test"
+}
