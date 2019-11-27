@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Career Starter",
+    "slug": "carrer-starter",
+    "description": "Aplicação desenvolvida para o hackathon do evento RSXP 2019",
+    "githubUrl": "https://github.com/rpc1910/hackathon-rsxp/",
+    "primaryColor": "#4267B2",
+    "privacy": "public",
+    "sdkVersion": "35.0.0",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4267B2"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
