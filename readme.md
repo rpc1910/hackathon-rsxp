@@ -18,6 +18,11 @@ O CareerStarter também incentiva o estudante a criar conexões com outros estud
 
 https://expo.io/@rpc_1910/carrer-starter
 
+## Apresentação
+
+https://prezi.com/view/OxKJ3SvouN7imHhRJKwi/
+v2: https://prezi.com/view/SebI9rLnqaOWyoSj4ABb/
+
 ## Membros
 
 - Leonardo Soares (@leferso)
