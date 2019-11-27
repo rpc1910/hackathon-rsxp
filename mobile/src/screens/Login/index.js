@@ -9,7 +9,7 @@ import Button from "../../components/Button";
 import logo from "../../assets/images/logo.png";
 
 export default function Login({ navigation }) {
-  function handleLogin() {
+  async function handleLogin() {
     navigation.navigate("AreasConhecimento");
   }
 

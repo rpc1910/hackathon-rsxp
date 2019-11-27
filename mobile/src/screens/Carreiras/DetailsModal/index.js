@@ -13,19 +13,25 @@ export default function DetailsModal({
   onSelect,
   ...props
 }) {
+  function handleConnections() {
+    navigation.navigate("Parceiros");
+  }
+
   return (
     <Modal onBackButtonPress={onClose} {...props}>
       <Container>
         <ScrollView>
           <Text size={22} color="#4267b2" style={{ fontWeight: "bold" }}>
-            {carreira.title}
+            {carreira.laymanTitle}
           </Text>
           <Image
             source={{ uri: "https://placeimg.com/600/200/tech" }}
             resizeMode="cover"
             style={{ height: 150, marginBottom: 20 }}
           />
-
+          <Text size={22} color="#4267b2" style={{ fontWeight: "bold" }}>
+            {carreira.title}
+          </Text>
           <Text size={13} color="#000">
             {carreira.description}
           </Text>

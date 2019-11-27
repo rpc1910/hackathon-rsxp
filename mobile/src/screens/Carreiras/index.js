@@ -140,8 +140,8 @@ export default function Carreiras({ navigation }) {
 
   function onPressModal(carreira) {
     setShowModal(false);
-    // navigation.navigate("Parceiros", { carreira: selected });
-    navigation.navigate("Trilha", { carreira: selected });
+    navigation.navigate("Parceiros", { carreira: selected });
+    // navigation.navigate("Trilha", { carreira: selected });
   }
 
   return (
@@ -155,7 +155,7 @@ export default function Carreiras({ navigation }) {
 
           <List
             data={carreiras}
-            keyExtractor={item => item._id}
+            keyExtractor={item => item.laymanTitle}
             renderItem={renderItem}
           />
         </>

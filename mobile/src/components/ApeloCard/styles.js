@@ -21,7 +21,8 @@ export const Container = styled.TouchableOpacity.attrs(props => ({
 export const Image = styled.Image.attrs({
   resizeMode: "contain"
 })`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   margin-left: 5px;
+  padding-bottom: 5px;
 `;
