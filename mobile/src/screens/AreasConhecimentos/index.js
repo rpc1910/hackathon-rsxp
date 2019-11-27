@@ -39,7 +39,15 @@ export default function AreasConhecimentos({ navigation }) {
       {!isLoading && (
         <Centered>
           <View>
-            <Text size={18} style={{ fontWeight: "bold", marginBottom: 30 }}>
+            <Text
+              size={18}
+              style={{
+                fontWeight: "bold",
+                marginBottom: 30,
+                width: 300,
+                textAlign: "center"
+              }}
+            >
               Com qual área você se identifica?
             </Text>
 

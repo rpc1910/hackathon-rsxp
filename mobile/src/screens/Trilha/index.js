@@ -11,37 +11,37 @@ import Card from "../../components/Card";
 const mock = [
   {
     __id: "1",
-    title: "Conceitos de HTML",
+    laymanTitle: "Conceitos de HTML",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis fringilla nunc. Aliquam imperdiet maximus augue, id suscipit enim ullamcorper eget."
   },
   {
     __id: "2",
-    title: "Conceitos de CSS",
+    laymanTitle: "Conceitos de CSS",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis fringilla nunc. Aliquam imperdiet maximus augue, id suscipit enim ullamcorper eget."
   },
   {
     __id: "3",
-    title: "Lógica de programação",
+    laymanTitle: "Lógica de programação",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis fringilla nunc. Aliquam imperdiet maximus augue, id suscipit enim ullamcorper eget."
   },
   {
     __id: "4",
-    title: "Conceitos de Javascript",
+    laymanTitle: "Conceitos de Javascript",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis fringilla nunc. Aliquam imperdiet maximus augue, id suscipit enim ullamcorper eget."
   },
   {
     __id: "5",
-    title: "Conceitos de desenvolvimento",
+    laymanTitle: "Conceitos de desenvolvimento",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis fringilla nunc. Aliquam imperdiet maximus augue, id suscipit enim ullamcorper eget."
   },
   {
     __id: "6",
-    title: "Conceitos de React",
+    laymanTitle: "Conceitos de React",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis fringilla nunc. Aliquam imperdiet maximus augue, id suscipit enim ullamcorper eget."
   }
@@ -78,13 +78,13 @@ export default function Trilha({ navigation }) {
     <Container style={{ paddingTop: 40 }}>
       {!isLoading && (
         <>
-          <Text size={18} style={{ fontWeight: "bold" }}>
+          <Text size={18} style={{ fontWeight: "bold", width: 500 }}>
             O caminho do: Desenvolvedor Frontend
           </Text>
 
           <List
             data={items}
-            keyExtractor={item => item.title}
+            keyExtractor={item => item.laymanTitle}
             renderItem={renderItem}
           />
         </>

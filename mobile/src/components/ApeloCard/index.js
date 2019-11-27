@@ -9,15 +9,11 @@ export default function Card({ item, image, ...props }) {
     <Container {...props}>
       <View style={{ flex: 1 }}>
         <Text style={{ fontWeight: "bold" }} size={15}>
-          {item.laymanTitle}
+          {item.title}
         </Text>
         <Text size={13}>{item.description}</Text>
       </View>
-      {image && (
-        <Image
-          source={{ uri: `https://placeimg.com/200/200/tech?${item._id}` }}
-        />
-      )}
+      {image && <Image source={{ uri: `${item.img}` }} />}
     </Container>
   );
 }

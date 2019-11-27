@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 import { Platform } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const Background = styled.View`
   flex: 1;
@@ -27,12 +28,15 @@ export const KeyboardAvoidingView = styled.KeyboardAvoidingView.attrs({
 
 export default function Container({ children, ...props }) {
   return (
-    <Background>
+    <LinearGradient
+      colors={["#2a4373", "#395999", "#5e94ff"]}
+      style={{ flex: 1 }}
+    >
       <SafeAreaView>
         <KeyboardAvoidingView>
           <ScrollView {...props}>{children}</ScrollView>
         </KeyboardAvoidingView>
       </SafeAreaView>
-    </Background>
+    </LinearGradient>
   );
 }

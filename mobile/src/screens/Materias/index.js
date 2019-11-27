@@ -54,8 +54,16 @@ export default function Materias({ navigation }) {
         <>
           <Centered>
             <View>
-              <Text size={18} style={{ fontWeight: "bold", marginBottom: 30 }}>
-                Com qual área você se identifica?
+              <Text
+                size={18}
+                style={{
+                  fontWeight: "bold",
+                  marginBottom: 30,
+                  width: 300,
+                  textAlign: "center"
+                }}
+              >
+                Com qual matéria você se identifica?
               </Text>
 
               {materias.map(materia => {

@@ -4,6 +4,7 @@ import createAnimatedSwitchNavigator from "react-navigation-animated-switch";
 import { Transition } from "react-native-reanimated";
 import { createStackNavigator } from "react-navigation-stack";
 
+import Apelo from "./screens/Apelo";
 import Login from "./screens/Login";
 import AreasConhecimento from "./screens/AreasConhecimentos";
 import Materias from "./screens/Materias";
@@ -14,6 +15,7 @@ import Trilha from "./screens/Trilha";
 export default createAppContainer(
   createStackNavigator(
     {
+      Apelo,
       Login,
       AreasConhecimento,
       Materias,
@@ -22,7 +24,7 @@ export default createAppContainer(
       Trilha
     },
     {
-      initialRouteName: "Login",
+      initialRouteName: "Apelo",
       defaultNavigationOptions: {
         headerTransparent: true,
         headerTintColor: "#fff"
