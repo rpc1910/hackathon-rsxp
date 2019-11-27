@@ -14,7 +14,7 @@ module.exports = {
     let targetCourse = null;
 
     if (!loggedStudent) {
-      return res.status(400).json({ error: "user not found" });
+      return res.status(400).json({ error: "Student not found" });
     }
 
     try {
@@ -23,17 +23,25 @@ module.exports = {
       return res.status(400).json({ error: "Course not exists" });
     }
 
-    if (
-      loggedStudent.dislikes.includes(targetCourse._id) ||
-      loggedStudent.likes.includes(targetCourse._id)
-    ) {
+    if (loggedStudent.likes.includes(targetCourse._id)) {
       return res.status(400).json({ error: "Already exist vote." });
     }
+
+    removeDislike(loggedStudent, targetCourse);
 
     loggedStudent.likes.push(targetCourse._id);
 
     await loggedStudent.save();
 
     return res.json(loggedStudent);
+  }
+};
+
+const removeDislike = (loggedStudent, targetCourse) => {
+  if (loggedStudent.dislikes.includes(targetCourse._id)) {
+    loggedStudent.dislikes.splice(
+      loggedStudent.dislikes.indexOf(targetCourse._id),
+      1
+    );
   }
 };

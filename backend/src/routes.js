@@ -1,5 +1,6 @@
 const express = require("express");
 const StudentController = require("./controllers/StudentController");
+const ConnectionController = require("./controllers/ConnectionController");
 const CourseController = require("./controllers/CourseController");
 const LikeController = require("./controllers/LikeController");
 const DislikeController = require("./controllers/DislikeController");
@@ -18,6 +19,7 @@ routes.post("/students", StudentController.store);
 
 routes.post("/students/:courseId/likes", LikeController.store);
 routes.post("/students/:courseId/dislikes", DislikeController.store);
+routes.post("/students/:studentId/connections", ConnectionController.store);
 
 routes.get("/carrers", CarrerController.index);
 routes.post("/carrers/seed", CarrerController.seed);
