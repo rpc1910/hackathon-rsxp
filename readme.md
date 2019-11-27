@@ -30,3 +30,31 @@ v2: https://prezi.com/view/SebI9rLnqaOWyoSj4ABb/
 - Gabriel Dorneles (@gabrieldorneles09)
 - Gilberto VN (@GilbertoSVN)
 - Rodrigo Passos (@rpc1910)
+
+## Instruções
+
+**backend**
+
+Necessário ter o NodeJS/Yarn e NPM instalados
+
+**Para acessar o backend**
+
+```bash
+cd backend
+```
+
+**Para instalar as dependências**
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+**Para executar o backend**
+
+```bash
+npm run dev
+# ou
+yarn run dev
+```

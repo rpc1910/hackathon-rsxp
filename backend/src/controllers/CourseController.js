@@ -9,7 +9,8 @@ const seedCourses = [
   { _id: "5ddd7b3107f8b710adaf1e41", name: "Filosofia" },
   { _id: "5ddd7b3c07f8b710adaf1e42", name: "Língua Portuguesa e Literatura" },
   { _id: "5ddd7b4907f8b710adaf1e43", name: "Língua Estrangeira" },
-  { _id: "5ddd7b5107f8b710adaf1e44", name: "Biologia" }
+  { _id: "5ddd7b5107f8b710adaf1e44", name: "Biologia" },
+  { _id: "5ddd96b77bd1c9201776e55a", name: "Sociologia" }
 ];
 
 module.exports = {

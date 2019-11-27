@@ -13,6 +13,12 @@ const StudentSchema = new Schema({
     type: String,
     required: true
   },
+  connections: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: "Student"
+    }
+  ],
   likes: [
     {
       type: Schema.Types.ObjectId,

@@ -27,5 +27,8 @@ app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-app.listen(process.env.PORT || 8080);
-console.log("server on");
+const HOST = process.env.HOST || "0.0.0.0";
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, HOST);
+
+console.log(`server on in ${HOST}:${PORT}`);

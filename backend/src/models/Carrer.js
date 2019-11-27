@@ -5,6 +5,10 @@ const CarrerSchema = new Schema({
     type: String,
     required: true
   },
+  laymanTitle: {
+    type: String,
+    required: true
+  },
   description: {
     type: String,
     required: true
